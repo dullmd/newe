@@ -17,6 +17,9 @@
 - 🌐 Google Search
 - 🧠 AI Chat
 - 🕹️ Games & Fun
+- 
+# DEMO 
+https://newe-1kf2.onrender.com/
 
 ## 📦 Installation
 
