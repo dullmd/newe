@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝙎𝙄𝙇𝘼-𝙈𝘿 🐢 | 𝙂𝙚𝙩 𝙋𝙖𝙞𝙧 𝘾𝙤𝙙𝙚</title>
+    <title>𝙱𝚄𝙳 𝙶𝚄𝚈𝚂 | 𝙶𝚎𝚝 𝙿𝚊𝚒𝚛 𝙲𝚘𝚍𝚎</title>
     <style>
         * {
             margin: 0;
@@ -13,192 +13,388 @@
         }
 
         body {
-            background: linear-gradient(135deg, #000000 0%, #0a0a2a 100%);
+            background: linear-gradient(135deg, #0a0f1e 0%, #1a1f2e 100%);
             color: #fff;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
         .container {
-            background: rgba(0, 20, 40, 0.9);
+            background: rgba(20, 25, 40, 0.95);
             backdrop-filter: blur(10px);
-            border: 2px solid #0066ff;
+            border: 2px solid #00ff88;
             border-radius: 20px;
             padding: 40px;
             width: 90%;
             max-width: 500px;
-            box-shadow: 0 20px 50px rgba(0, 102, 255, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 255, 136, 0.2);
+            animation: slideUp 0.5s ease;
         }
 
-        h2 {
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
             text-align: center;
             margin-bottom: 30px;
-            font-size: 28px;
-            background: linear-gradient(45deg, #0066ff, #00ccff);
+        }
+
+        .logo h1 {
+            font-size: 42px;
+            background: linear-gradient(45deg, #00ff88, #00aaff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+
+        .logo p {
+            color: #aaa;
+            font-size: 14px;
+            margin-top: 5px;
         }
 
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
-            color: #00ccff;
+            margin-bottom: 10px;
+            color: #00ff88;
             font-weight: 600;
+            font-size: 16px;
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid #00ff88;
+            border-radius: 12px;
+            padding: 5px 15px;
+        }
+
+        .prefix {
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 18px;
+            margin-right: 10px;
         }
 
         input {
             width: 100%;
-            padding: 15px;
-            background: rgba(0, 30, 60, 0.8);
-            border: 1px solid #0066ff;
-            border-radius: 10px;
+            padding: 15px 0;
+            background: transparent;
+            border: none;
             color: #fff;
-            font-size: 16px;
-            transition: all 0.3s;
+            font-size: 18px;
+            outline: none;
         }
 
-        input:focus {
-            outline: none;
-            border-color: #00ccff;
-            box-shadow: 0 0 15px rgba(0, 204, 255, 0.3);
+        input::placeholder {
+            color: #445566;
         }
 
         button {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #0066ff, #00ccff);
+            padding: 18px;
+            background: linear-gradient(135deg, #00ff88, #00aaff);
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             color: #000;
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-top: 10px;
         }
 
-        button:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.5);
+        button:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         .result {
             margin-top: 30px;
-            padding: 20px;
-            background: rgba(0, 102, 255, 0.1);
-            border: 1px solid #0066ff;
-            border-radius: 10px;
-            word-break: break-all;
+            padding: 25px;
+            background: rgba(0, 255, 136, 0.05);
+            border: 2px solid #00ff88;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .result h3 {
-            color: #00ccff;
-            margin-bottom: 10px;
+            color: #00ff88;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .code-box {
+            background: #0a0f1e;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .code {
-            font-size: 24px;
+            font-size: 32px;
             font-weight: bold;
-            color: #fff;
+            color: #00ff88;
+            letter-spacing: 5px;
+            font-family: monospace;
+            word-break: break-all;
+        }
+
+        .instructions {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.6;
             text-align: center;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            letter-spacing: 2px;
+        }
+
+        .instructions ol {
+            text-align: left;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin: 8px 0;
+            color: #ddd;
         }
 
         .loading {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .loading::after {
-            content: '';
             display: inline-block;
             width: 20px;
             height: 20px;
-            border: 3px solid #0066ff;
+            border: 3px solid #00ff88;
             border-radius: 50%;
-            border-top-color: #00ccff;
-            animation: spin 1s ease-in-out infinite;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
         }
 
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
 
-        .back {
-            display: block;
-            text-align: center;
+        .status {
             margin-top: 20px;
-            color: #666;
-            text-decoration: none;
-            transition: color 0.3s;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 500;
         }
 
-        .back:hover {
-            color: #00ccff;
+        .status.success {
+            background: rgba(0, 255, 136, 0.2);
+            border: 1px solid #00ff88;
+            color: #00ff88;
+        }
+
+        .status.error {
+            background: rgba(255, 68, 68, 0.2);
+            border: 1px solid #ff4444;
+            color: #ff4444;
+        }
+
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        .info-box {
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 4px solid #00ff88;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #ccc;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>🐢 𝙂𝙀𝙏 𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀</h2>
-        
+        <div class="logo">
+            <h1>𝙱𝚄𝙳 𝙶𝚄𝚈𝚂</h1>
+            <p>ᴾᵒʷᵉʳᵈ ᵇʸ ᴮᵃᵈ ᴳᵘʸˢ ᴴᵃᶜᵏᵉʳˢ</p>
+        </div>
+
+        <div class="info-box">
+            <strong>📱 How to get Pair Code:</strong>
+            <ol style="margin-top: 8px; padding-left: 20px;">
+                <li>Enter your WhatsApp number</li>
+                <li>Click "Get Pair Code"</li>
+                <li>Open WhatsApp on your phone</li>
+                <li>Go to Linked Devices → Link a Device</li>
+                <li>Enter the 8-digit code shown</li>
+            </ol>
+        </div>
+
         <div class="input-group">
-            <label>📱 𝙒𝙝𝙖𝙩𝙨𝘼𝙥𝙥 𝙉𝙪𝙢𝙗𝙚𝙧</label>
-            <input type="text" id="number" placeholder="9478xxxxxx" value="947858xxxxx">
+            <label>📞 WHATSAPP NUMBER (with country code)</label>
+            <div class="input-wrapper">
+                <span class="prefix">+</span>
+                <input type="text" id="number" placeholder="254712345678" value="254">
+            </div>
+            <p style="color: #aaa; font-size: 12px; margin-top: 5px;">Example: 254712345678 (Kenya)</p>
         </div>
-        
-        <button onclick="getPairCode()">🔗 𝙂𝙚𝙩 𝙋𝙖𝙞𝙧 𝘾𝙤𝙙𝙚</button>
-        
-        <div id="result" class="result" style="display: none;">
-            <h3>✅ 𝙋𝙖𝙞𝙧 𝘾𝙤𝙙𝙚 𝙂𝙚𝙣𝙚𝙧𝙖𝙩𝙚𝙙</h3>
-            <div id="code" class="code"></div>
-            <p style="margin-top: 15px; color: #aaa; font-size: 12px;">Enter this code in your WhatsApp > Linked Devices</p>
+
+        <button onclick="getPairCode()" id="pairBtn">
+            <span>🔗 GET PAIR CODE</span>
+        </button>
+
+        <div id="result" class="result">
+            <h3>✅ PAIR CODE GENERATED</h3>
+            <div class="code-box">
+                <div id="code" class="code">XXXX XXXX</div>
+            </div>
+            <div class="instructions">
+                <strong>📲 Steps to connect:</strong>
+                <ol>
+                    <li>Open WhatsApp on your phone</li>
+                    <li>Tap <strong>Menu (⋮) → Linked Devices</strong></li>
+                    <li>Tap <strong>Link a Device</strong></li>
+                    <li>Enter this 8-digit code: <strong id="codeDisplay"></strong></li>
+                    <li>Wait for connection...</li>
+                </ol>
+                <p style="color: #00ff88; margin-top: 15px;">⏱️ Code expires in 5 minutes</p>
+            </div>
         </div>
-        
-        <a href="/" class="back">← 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙃𝙤𝙢𝙚</a>
+
+        <div id="status" class="status"></div>
+
+        <div class="footer">
+            <p>© 2026 𝙱𝚄𝙳 𝙶𝚄𝚈𝚂 | <a href="#" onclick="window.open('https://files.catbox.moe/natk49.jpg')">Join Group</a></p>
+        </div>
     </div>
 
     <script>
         async function getPairCode() {
-            const number = document.getElementById('number').value.trim();
-            if (!number) {
-                alert('Please enter a number');
+            const numberInput = document.getElementById('number');
+            const number = numberInput.value.trim().replace(/[^0-9]/g, '');
+            const btn = document.getElementById('pairBtn');
+            const resultDiv = document.getElementById('result');
+            const statusDiv = document.getElementById('status');
+            
+            // Validate number
+            if (!number || number.length < 10) {
+                showStatus('❌ Please enter a valid phone number with country code', 'error');
                 return;
             }
 
-            const button = document.querySelector('button');
-            const originalText = button.textContent;
-            button.textContent = '⏳ 𝙂𝙚𝙣𝙚𝙧𝙖𝙩𝙞𝙣𝙜...';
-            button.disabled = true;
-
-            document.getElementById('result').style.display = 'none';
+            // Disable button
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading"></span> GENERATING CODE...';
+            
+            // Hide previous result
+            resultDiv.classList.remove('show');
+            statusDiv.style.display = 'none';
 
             try {
-                const res = await fetch(`/code?number=${encodeURIComponent(number)}`);
-                const data = await res.json();
+                // Make API call
+                const response = await fetch(`/code?number=${number}`);
+                const data = await response.json();
                 
-                if (data.code) {
+                if (data.success && data.code) {
+                    // Display the code
                     document.getElementById('code').textContent = data.code;
-                    document.getElementById('result').style.display = 'block';
+                    document.getElementById('codeDisplay').textContent = data.code;
+                    resultDiv.classList.add('show');
+                    
+                    showStatus('✅ Code generated successfully!', 'success');
+                    
+                    // Auto refresh status every 5 seconds
+                    checkConnectionStatus(number);
                 } else {
-                    alert('Error: ' + (data.error || 'Failed to get code'));
+                    showStatus('❌ ' + (data.error || 'Failed to generate code'), 'error');
                 }
             } catch (error) {
-                alert('Network error: ' + error.message);
+                console.error('Error:', error);
+                showStatus('❌ Network error. Please try again.', 'error');
             } finally {
-                button.textContent = originalText;
-                button.disabled = false;
+                // Re-enable button
+                btn.disabled = false;
+                btn.innerHTML = '🔗 GET PAIR CODE';
             }
         }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${type}`;
+            statusDiv.style.display = 'block';
+            
+            // Auto hide after 5 seconds
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        async function checkConnectionStatus(number) {
+            // Check if connected every 5 seconds for 2 minutes
+            let checks = 0;
+            const interval = setInterval(async () => {
+                try {
+                    const response = await fetch(`/status/${number}`);
+                    const data = await response.json();
+                    
+                    if (data.connected) {
+                        showStatus('✅ Bot connected successfully!', 'success');
+                        clearInterval(interval);
+                    }
+                } catch (e) {
+                    // Ignore errors
+                }
+                
+                checks++;
+                if (checks > 24) { // 2 minutes (24 * 5 seconds)
+                    clearInterval(interval);
+                }
+            }, 5000);
+        }
+
+        // Auto-format number input
+        document.getElementById('number').addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
     </script>
 </body>
 </html>
