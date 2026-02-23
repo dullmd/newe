@@ -9,7 +9,6 @@ const axios = require('axios');
 const moment = require('moment-timezone');
 const { config } = require('./config');
 const { Session, Settings, BadWord, DeletedMessage, getSettings, updateSettings } = require('./lib/database');
-const NodeCache = require('node-cache');
 
 // Active connections store
 const activeConnections = new Map();
