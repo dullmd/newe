@@ -1,0 +1,16 @@
+
+### 10. **profile/bot.jpg**
+Weka picha ya bot kwenye folder hii (https://files.catbox.moe/brou6d.jpg)
+
+## 🚀 **Jinsi ya Kuendesha Bot**
+
+### 1. **Kwenye Terminal/Local**
+```bash
+# Install dependencies
+npm install
+
+# Start bot
+npm start
+
+# Au kwa development mode
+npm run dev
