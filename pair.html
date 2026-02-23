@@ -3,310 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𝙱𝚄𝙳 𝙶𝚄𝚈𝚂 - Pairing</title>
+    <title>𝙎𝙄𝙇𝘼-𝙈𝘿 🐢 | 𝙂𝙚𝙩 𝙋𝙖𝙞𝙧 𝘾𝙤𝙙𝙚</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #000000 0%, #0a0a2a 100%);
+            color: #fff;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
         }
-        
+
         .container {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(0, 20, 40, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid #0066ff;
             border-radius: 20px;
             padding: 40px;
+            width: 90%;
             max-width: 500px;
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            animation: slideUp 0.5s ease;
+            box-shadow: 0 20px 50px rgba(0, 102, 255, 0.4);
         }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .header {
+
+        h2 {
             text-align: center;
             margin-bottom: 30px;
-        }
-        
-        .header img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 4px solid #667eea;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
-            }
-        }
-        
-        .header h1 {
-            font-size: 2.5em;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-size: 28px;
+            background: linear-gradient(45deg, #0066ff, #00ccff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
         }
-        
-        .header p {
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        .header p span {
-            color: #667eea;
-            font-weight: 600;
-        }
-        
-        .form-group {
+
+        .input-group {
             margin-bottom: 20px;
         }
-        
-        .form-group label {
+
+        label {
             display: block;
             margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
+            color: #00ccff;
+            font-weight: 600;
         }
-        
-        .form-group input {
+
+        input {
             width: 100%;
             padding: 15px;
-            border: 2px solid #e0e0e0;
+            background: rgba(0, 30, 60, 0.8);
+            border: 1px solid #0066ff;
             border-radius: 10px;
-            font-size: 1em;
+            color: #fff;
+            font-size: 16px;
             transition: all 0.3s;
-            font-family: 'Poppins', sans-serif;
         }
-        
-        .form-group input:focus {
-            border-color: #667eea;
+
+        input:focus {
             outline: none;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            border-color: #00ccff;
+            box-shadow: 0 0 15px rgba(0, 204, 255, 0.3);
         }
-        
-        .form-group input::placeholder {
-            color: #999;
-        }
-        
+
         button {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            background: linear-gradient(135deg, #0066ff, #00ccff);
             border: none;
             border-radius: 10px;
-            font-size: 1.1em;
+            color: #000;
+            font-size: 18px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            font-family: 'Poppins', sans-serif;
-            position: relative;
-            overflow: hidden;
+            margin-top: 10px;
         }
-        
+
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.5);
         }
-        
-        button:active {
-            transform: translateY(0);
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 102, 255, 0.1);
+            border: 1px solid #0066ff;
+            border-radius: 10px;
+            word-break: break-all;
         }
-        
-        button.loading {
-            pointer-events: none;
-            opacity: 0.8;
+
+        .result h3 {
+            color: #00ccff;
+            margin-bottom: 10px;
         }
-        
-        button.loading::after {
+
+        .code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            letter-spacing: 2px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading::after {
             content: '';
-            position: absolute;
+            display: inline-block;
             width: 20px;
             height: 20px;
-            top: 50%;
-            left: 50%;
-            margin-left: -10px;
-            margin-top: -10px;
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top-color: white;
+            border: 3px solid #0066ff;
             border-radius: 50%;
-            animation: spin 0.8s linear infinite;
+            border-top-color: #00ccff;
+            animation: spin 1s ease-in-out infinite;
         }
-        
+
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-        
-        .status {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 10px;
-            display: none;
-        }
-        
-        .status.success {
+
+        .back {
             display: block;
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .status.error {
-            display: block;
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-        
-        .info {
-            margin-top: 30px;
             text-align: center;
-            font-size: 0.85em;
+            margin-top: 20px;
             color: #666;
-        }
-        
-        .info a {
-            color: #667eea;
             text-decoration: none;
-            font-weight: 600;
+            transition: color 0.3s;
         }
-        
-        .info a:hover {
-            text-decoration: underline;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin: 20px 0;
-            padding: 20px 0;
-            border-top: 1px solid #e0e0e0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #555;
-            font-size: 0.9em;
-        }
-        
-        .feature-item span {
-            color: #667eea;
+
+        .back:hover {
+            color: #00ccff;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <img src="https://files.catbox.moe/brou6d.jpg" alt="Bot Logo">
-            <h1>𝙱𝚄𝙳 𝙶𝚄𝚈𝚂</h1>
-            <p>ᴾᵒʷᵉʳᵈ ᵇʸ <span>ᴮᵃᵈ ᴳᵘʸˢ ᴴᵃᶜᵏᵉʳˢ</span></p>
+        <h2>🐢 𝙂𝙀𝙏 𝙋𝘼𝙄𝙍 𝘾𝙊𝘿𝙀</h2>
+        
+        <div class="input-group">
+            <label>📱 𝙒𝙝𝙖𝙩𝙨𝘼𝙥𝙥 𝙉𝙪𝙢𝙗𝙚𝙧</label>
+            <input type="text" id="number" placeholder="9478xxxxxx" value="947858xxxxx">
         </div>
         
-        <div class="features">
-            <div class="feature-item"><span>👀</span> Auto View</div>
-            <div class="feature-item"><span>❤️</span> Auto Like</div>
-            <div class="feature-item"><span>🛡️</span> Anti-Link</div>
-            <div class="feature-item"><span>🎵</span> Music Download</div>
-            <div class="feature-item"><span>🧠</span> AI Chat</div>
-            <div class="feature-item"><span>👥</span> Group Manage</div>
+        <button onclick="getPairCode()">🔗 𝙂𝙚𝙩 𝙋𝙖𝙞𝙧 𝘾𝙤𝙙𝙚</button>
+        
+        <div id="result" class="result" style="display: none;">
+            <h3>✅ 𝙋𝙖𝙞𝙧 𝘾𝙤𝙙𝙚 𝙂𝙚𝙣𝙚𝙧𝙖𝙩𝙚𝙙</h3>
+            <div id="code" class="code"></div>
+            <p style="margin-top: 15px; color: #aaa; font-size: 12px;">Enter this code in your WhatsApp > Linked Devices</p>
         </div>
         
-        <div class="form-group">
-            <label for="phone">📱 WhatsApp Number (with country code)</label>
-            <input type="text" id="phone" placeholder="e.g., 254712345678" value="254">
-        </div>
-        
-        <button onclick="pair()" id="pairBtn">🔐 PAIR DEVICE</button>
-        
-        <div class="status" id="status"></div>
-        
-        <div class="info">
-            <p>⚠️ Enter your WhatsApp number to pair</p>
-            <p>📌 Make sure WhatsApp is installed on your phone</p>
-            <p>🔗 <a href="#" onclick="window.open('https://files.catbox.moe/natk49.jpg')">Join Support Group</a></p>
-        </div>
+        <a href="/" class="back">← 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙃𝙤𝙢𝙚</a>
     </div>
 
     <script>
-        async function pair() {
-            const phone = document.getElementById('phone').value.trim();
-            const btn = document.getElementById('pairBtn');
-            const status = document.getElementById('status');
-            
-            if (!phone || phone.length < 10) {
-                showStatus('❌ Please enter a valid phone number', 'error');
+        async function getPairCode() {
+            const number = document.getElementById('number').value.trim();
+            if (!number) {
+                alert('Please enter a number');
                 return;
             }
-            
-            btn.classList.add('loading');
-            btn.textContent = 'PAIRING...';
-            status.style.display = 'none';
-            
+
+            const button = document.querySelector('button');
+            const originalText = button.textContent;
+            button.textContent = '⏳ 𝙂𝙚𝙣𝙚𝙧𝙖𝙩𝙞𝙣𝙜...';
+            button.disabled = true;
+
+            document.getElementById('result').style.display = 'none';
+
             try {
-                const response = await fetch('/pair', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ phoneNumber: phone })
-                });
+                const res = await fetch(`/code?number=${encodeURIComponent(number)}`);
+                const data = await res.json();
                 
-                const data = await response.json();
-                
-                if (data.success) {
-                    showStatus(`✅ Paired successfully!\nSession ID: ${data.sessionId}`, 'success');
+                if (data.code) {
+                    document.getElementById('code').textContent = data.code;
+                    document.getElementById('result').style.display = 'block';
                 } else {
-                    showStatus(`❌ ${data.error || 'Pairing failed'}`, 'error');
+                    alert('Error: ' + (data.error || 'Failed to get code'));
                 }
             } catch (error) {
-                showStatus('❌ Connection error. Please try again.', 'error');
+                alert('Network error: ' + error.message);
             } finally {
-                btn.classList.remove('loading');
-                btn.textContent = '🔐 PAIR DEVICE';
+                button.textContent = originalText;
+                button.disabled = false;
             }
-        }
-        
-        function showStatus(message, type) {
-            const status = document.getElementById('status');
-            status.className = `status ${type}`;
-            status.textContent = message;
         }
     </script>
 </body>
