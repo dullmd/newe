@@ -2481,4 +2481,4 @@ process.on('unhandledRejection', (reason, promise) => {
 
 // ==================== EXPORTS ====================
 
-module.exports = { router, startAllSessions };
+module.exports = router;
