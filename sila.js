@@ -15,18 +15,21 @@ const mongoose = require('mongoose');
 
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://sila_md:sila0022@sila.67mxtd7.mongodb.net/';
 
-// Connect to MongoDB
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 30000,
-  socketTimeoutMS: 45000,
-}).then(() => {
-  console.log('✅ Connected to MongoDB');
-}).catch(err => {
-  console.error('❌ MongoDB connection error:', err);
-  process.exit(1);
-});
+// Check if already connected
+if (mongoose.connection.readyState === 0) {
+  // Connect to MongoDB only if not connected
+  mongoose.connect(MONGODB_URI, {
+    serverSelectionTimeoutMS: 30000,
+    socketTimeoutMS: 45000,
+  }).then(() => {
+    console.log('✅ Connected to MongoDB');
+  }).catch(err => {
+    console.error('❌ MongoDB connection error:', err);
+    process.exit(1);
+  });
+} else {
+  console.log('✅ MongoDB already connected');
+}
 
 // ==================== MONGODB SCHEMAS ====================
 
